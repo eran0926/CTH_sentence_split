@@ -1,5 +1,8 @@
 # CTH_sentence_split
 
+[PyPI](https://)
+[Github](https://github.com/eran0926/CTH_sentence_split)
+
 ## Info
 This program is a system that you can split a sentence with Chinese (Traditional), Chinese (Traditional), Taiwanese and Hakka's dictionary.
 It will return a list.
