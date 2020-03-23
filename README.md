@@ -1,6 +1,6 @@
 # CTH_sentence_split
 
-[PyPI](https://)  
+[PyPI](https://pypi.org/project/CTH-sentence-split/)  
 [Github](https://github.com/eran0926/CTH_sentence_split)
 
 ## Info
@@ -10,7 +10,7 @@ It will return a list.
 ## LICENSE
 This program in licensed under the GNU AGPLv3 or later.  
 You should have received a copy of the GNU Affero General Public License v3.0 along with this program.  
-If not,see [https://www.gnu.org/licenses/agpl-3.0.txt](https://www.gnu.org/licenses/agpl-3.0-standalone.html).
+If not,see [https://www.gnu.org/licenses/agpl-3.0-standalone.html](https://www.gnu.org/licenses/agpl-3.0-standalone.html).
 
 ## Install
 Install with `pip3 install CTH_sentence_split`
