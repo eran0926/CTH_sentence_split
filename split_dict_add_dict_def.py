@@ -1,5 +1,8 @@
+from os import path
+import os
 import time
 import pickle
+import inspect
 
 
 def find_the_longest(dic):
@@ -11,31 +14,33 @@ def find_the_longest(dic):
         if len(w) > h:
             h = len(w)
             ht = w
-    print(h)
-    print(ht)
+    # print(h)
+    # print(ht)
 
 
 def openfile(ch=True, ti=True, ha=True, add=True):
     # dic = [] #list
     dic = {}
-    # with open ("D:/Eran/Python/2019成大/中文斷詞/dict/dict_no_space.txt","r",encoding= "utf8",errors= "ignore") as f:
+    # with open ("path.join(fpath, "dict_no_space.txt"),"r",encoding= "utf8",errors= "ignore") as f:
     #     for line in f :
     #         # dic.append(line[0:-1]) #list
     #         dic[line[0:-1]]=0
 
-    with open(".\ch_dict_no_space.pickle", "rb") as f:
+    fpath = path.split(path.abspath(inspect.getfile(openfile)))[0]
+
+    with open(path.join(fpath, "ch_dict_no_space.pickle"), "rb") as f:
         ch_dic = pickle.load(f)
         # print(dic)
 
-    with open("./ti_dict.pickle", "rb") as f:
+    with open(path.join(fpath, "ti_dict.pickle"), "rb") as f:
         ti_dic = pickle.load(f)
         # print(dic)
 
-    with open("./ha_dict.pickle", "rb") as f:
+    with open(path.join(fpath, "ha_dict.pickle"), "rb") as f:
         ha_dic = pickle.load(f)
         # print(dic)
 
-    with open("./dict_add.txt", "r", encoding="utf8", errors="ignore") as da:
+    with open(path.join(fpath, "dict_add.txt"), "r", encoding="utf8", errors="ignore") as da:
         add_dic = {}
         for line in da:
             # dic.append(line[0:-1]) #list
@@ -137,9 +142,12 @@ def reverse_max(dic, new_sentence, length):
 
 
 def add_to_dict(ans_list, all_dic, dic, symbol):
-    with open("./dict_don't_add.txt", "r", encoding="utf8", errors="ignore") as blf:
+    fpath = path.split(path.abspath(inspect.getfile(openfile)))[0]
+
+    with open(path.join(fpath, "dict_don't_add.txt"), "r", encoding="utf8", errors="ignore") as blf:
         bl = blf.readlines()
-    with open("./dict_add.txt", "a+", encoding="utf8", errors="ignore") as da:
+
+    with open(path.join(fpath, "dict_add.txt"), "a+", encoding="utf8", errors="ignore") as da:
         f = ""
         new_list = []
         for a in ans_list:
@@ -178,7 +186,7 @@ def split(sentence, ch=True, ti=True, ha=True, add=True, add_dic=True):
         new = add_to_dict(ans_list, all_dic, dic, symbol)
     ttime = time.time()-startime
     print(ttime)
-    return ans_list, new
+    return ans_list
 
 
 if __name__ == "__main__":
