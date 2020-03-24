@@ -1,5 +1,0 @@
-include *.pickle
-include *.py
-include *.txt
-include LICENSE
-recursive-include __pycache__ *.pyc
