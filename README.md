@@ -13,10 +13,11 @@ You should have received a copy of the GNU Affero General Public License v3.0 al
 If not,see [https://www.gnu.org/licenses/agpl-3.0-standalone.html](https://www.gnu.org/licenses/agpl-3.0-standalone.html).
 
 ## Install
-Install with `pip3 install CTH_sentence_split`
+Install with `pip3 install -U CTH_sentence_split`
 
 ## Use
 ```python=
 import CTH_sentence_split as sp
 sp.split("sentence you want to split")
 ```
+

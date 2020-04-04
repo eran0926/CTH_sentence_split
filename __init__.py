@@ -1,1 +1,2 @@
-from .split_dict_add_dict_def import *
+from .__main__ import *
+from .update_dict import *

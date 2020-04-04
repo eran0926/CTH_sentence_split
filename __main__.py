@@ -28,19 +28,19 @@ def openfile(ch=True, ti=True, ha=True, add=True):
 
     fpath = path.split(path.abspath(inspect.getfile(openfile)))[0]
 
-    with open(path.join(fpath, "ch_dict_no_space.pickle"), "rb") as f:
+    with open(path.join(fpath, "data", "ch_dict_no_space.pickle"), "rb") as f:
         ch_dic = pickle.load(f)
         # print(dic)
 
-    with open(path.join(fpath, "ti_dict.pickle"), "rb") as f:
+    with open(path.join(fpath, "data", "ti_dict.pickle"), "rb") as f:
         ti_dic = pickle.load(f)
         # print(dic)
 
-    with open(path.join(fpath, "ha_dict.pickle"), "rb") as f:
+    with open(path.join(fpath, "data", "ha_dict.pickle"), "rb") as f:
         ha_dic = pickle.load(f)
         # print(dic)
 
-    with open(path.join(fpath, "dict_add.txt"), "r", encoding="utf8", errors="ignore") as da:
+    with open(path.join(fpath, "data", "dict_add.txt"), "r", encoding="utf8", errors="ignore") as da:
         add_dic = {}
         for line in da:
             # dic.append(line[0:-1]) #list
@@ -60,7 +60,7 @@ def openfile(ch=True, ti=True, ha=True, add=True):
 
     if add:
         dic = {**dic, **add_dic}
-    symbol = {'9', '|', '/', ')', 'B', 'P', '@', 'b', 'A', '，', '$', '1', 'y', ']', 't', '？', '&', 'w', 'K', 'g', '*', '=', '_', 's', 'D', ';', 'z', '"', '>', '2', '%', 'V', 'i', 'n', 'f', 'J', '0', '\\', 'M', '+', 'R', '#', "'", 'S', 'x', '`', 'r', '{', 'q', ' ', 'k',
+    symbol = {'；', '9', '|', '/', ')', 'B', 'P', '@', 'b', 'A', '，', '$', '1', 'y', ']', 't', '？', '&', 'w', 'K', 'g', '*', '=', '_', 's', 'D', ';', 'z', '"', '>', '2', '%', 'V', 'i', 'n', 'f', 'J', '0', '\\', 'M', '+', 'R', '#', "'", 'S', 'x', '`', 'r', '{', 'q', ' ', 'k',
               'u', ':', 'E', '「', '}', 'Q', 'C', '3', '~ ', '」', 'j', '-', '6', '7', 'H', 'T', 'p', 'a', '<', '!', 'X', 'l', 'd', 'W', 'm', '~', '5', '?', '、', 'Z', '8', '(', '4', 'e', 'c', 'N', '：', '[', 'o', 'I', 'v', 'U', 'G', '^', 'L', 'h', '。', 'O', ',', 'F', 'Y', '.'}
     return all_dic, dic, symbol
 
@@ -144,10 +144,10 @@ def reverse_max(dic, new_sentence, length):
 def add_to_dict(ans_list, all_dic, dic, symbol):
     fpath = path.split(path.abspath(inspect.getfile(openfile)))[0]
 
-    with open(path.join(fpath, "dict_don't_add.txt"), "r", encoding="utf8", errors="ignore") as blf:
+    with open(path.join(fpath, "data", "dict_don't_add.txt"), "r", encoding="utf8", errors="ignore") as blf:
         bl = blf.readlines()
 
-    with open(path.join(fpath, "dict_add.txt"), "a+", encoding="utf8", errors="ignore") as da:
+    with open(path.join(fpath, "data", "dict_add.txt"), "a+", encoding="utf8", errors="ignore") as da:
         f = ""
         new_list = []
         for a in ans_list:
