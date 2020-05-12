@@ -1,5 +1,9 @@
 import argparse
-from pkg import split, run_update
+
+try:
+    from pkg import split, run_update
+except ModuleNotFoundError:
+    from .pkg import split, run_update
 
 
 def choose():
